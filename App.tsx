@@ -5,7 +5,7 @@ import BrightnessSetting from './src/BrightnessSetting';
 
 function App(): React.JSX.Element {
   return (
-    <BatteryLife />
+    <BrightnessSetting />
   )
 }
 

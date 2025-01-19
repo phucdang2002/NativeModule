@@ -8,7 +8,7 @@
 
 RCT_EXPORT_MODULE();
 
-RCT_REMAP_METHOD(getBatteryLevel,
+RCT_REMAP_METHOD(getBatteryHealth,
                  resolver:(RCTPromiseResolveBlock)resolve
                  rejecter:(RCTPromiseRejectBlock)reject) {
   [UIDevice currentDevice].batteryMonitoringEnabled = YES;
