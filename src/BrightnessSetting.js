@@ -11,54 +11,62 @@ function BrightnessSetting() {
     };
 
     return (
-        <View style={styles.container}>
+        <View style={styles.screen}>
             <View style={styles.brightnessContainer}>
-                <Text style={styles.title}>Screen Brightness</Text>
+                <View style={styles.brightnessCircle}>
+                    <Text style={styles.brightnessText}>{(brightness * 100).toFixed(0)}%</Text>
+                </View>
+                <Text style={styles.title}>Brightness</Text>
                 <Slider
                     style={styles.slider}
                     minimumValue={0}
                     maximumValue={1}
                     value={brightness}
                     onValueChange={handleBrightnessChange}
+                    minimumTrackTintColor="#007AFF"
+                    maximumTrackTintColor="#DEDEDE"
                 />
-                <Text style={styles.brightnessText}>
-                    {(brightness * 100).toFixed(0)}%
-                </Text>
             </View>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    container: {
+    screen: {
         flex: 1,
-        padding: 20,
-        backgroundColor: '#fff',
-    },
-    batteryContainer: {
-        marginBottom: 40,
-        alignItems: 'center',
-    },
-    brightnessContainer: {
+        backgroundColor: '#F5F5F5',
+        justifyContent: 'center',
         alignItems: 'center',
     },
     title: {
-        fontSize: 24,
-        fontWeight: 'bold',
-        marginBottom: 20,
-    },
-    batteryText: {
-        fontSize: 48,
-        fontWeight: 'bold',
-        color: '#2196F3',
+        fontSize: 16,
+        color: '#000',
+        marginBottom: 10,
+        alignSelf: 'flex-start',
+        marginLeft: '10%',
     },
     slider: {
-        width: '100%',
+        width: '80%',
         height: 40,
     },
+    brightnessContainer: {
+        width: '100%',
+        alignItems: 'center',
+    },
+    brightnessCircle: {
+        width: 150,
+        height: 150,
+        borderRadius: 75,
+        borderWidth: 2,
+        borderColor: '#007AFF',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 30,
+    },
     brightnessText: {
-        fontSize: 18,
-        marginTop: 10,
+        fontSize: 24,
+        fontWeight: '500',
+        color: '#007AFF',
     },
 });
 
